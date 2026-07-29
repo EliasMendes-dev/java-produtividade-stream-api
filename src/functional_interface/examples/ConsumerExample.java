@@ -15,7 +15,7 @@ public class ConsumerExample {
     List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5);
 
     // Usar o Consumer com expressão lambda para imprimir números pares
-    @SuppressWarnings("unused")
+    
     Consumer<Integer> imprimirNumeroPar = numero -> {
       if (numero % 2 == 0) {
         System.out.println(numero);
@@ -25,6 +25,6 @@ public class ConsumerExample {
     // Usar o Consumer para imprimir números pares no Stream
     numeros.stream()
         .filter(n -> n % 2 == 0)
-        .forEach(System.out::println);
+        .forEach(imprimirNumeroPar);
   }
 }
